@@ -1,19 +1,32 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent } from "react";
 
-interface Reminder {
-  type: string;
+import ReminderForm from "./ReminderForm";
+
+import "./index.scss";
+
+export interface Type {
+  name: string;
 }
 
 type RemindersProps = {
-  reminders: Reminder[];
+  types: Type[];
 };
 
-const Reminders: FunctionComponent<RemindersProps> = ({ reminders = [] }) => {
+const customers = [
+  { name: 'Uribe' },
+  { name: 'Melina' },
+  { name: 'Daniel' },
+];
+
+const Reminders: FunctionComponent<RemindersProps> = ({ types = []}) => {
   return (
-    <div>
-      {reminders.map((r) => (
-        <div>{r.type}</div>
-      ))}
+    <div className='Reminders-container'>
+      <div>
+        {types.map((r, index) => (
+          <div key={index}>{r.name}</div>
+        ))}
+      </div>
+      <ReminderForm types={types} customers={customers} />
     </div>
   );
 };

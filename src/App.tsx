@@ -3,10 +3,12 @@ import './App.scss';
 
 import Reminders from './components/Reminders';
 
+const customer = { name: 'Daniel Moreno' };
+
 const reminders = [
-  { type: 'Thank you' },
-  { type: 'Item shipped' },
-  { type: 'Replenishmet' },
+  { type: 'Thank you', customer },
+  { type: 'Item shipped', customer },
+  { type: 'Replenishmet', customer },
 ];
 
 function App() {

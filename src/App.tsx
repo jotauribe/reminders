@@ -3,14 +3,16 @@ import './App.scss';
 
 import Reminders from './components/Reminders';
 
-const types = [
-  { name: 'Thank you' },
-  { name: 'Item shipped' },
-  { name: 'Replenishmet' },
+const customer = { name: 'Daniel Moreno' };
+
+const reminders = [
+  { name: 'Thank you', customer },
+  { name: 'Item shipped', customer },
+  { name: 'Replenishmet', customer },
 ];
 
 function App() {
-  return <Reminders types={types}></Reminders>;
+  return <Reminders reminders={reminders}></Reminders>;
 }
 
 export default App;

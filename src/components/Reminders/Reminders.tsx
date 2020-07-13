@@ -1,15 +1,22 @@
 import React, { FunctionComponent } from "react";
 
+import ReminderPreview from '../ReminderPreview';
 import ReminderForm from "./ReminderForm";
 
 import "./index.scss";
 
-export interface Type {
+interface Customer {
+  name: string
+}
+
+interface Reminder {
   name: string;
+  date?: Date;
+  customer: Customer;
 }
 
 type RemindersProps = {
-  types: Type[];
+  reminders: Reminder[];
 };
 
 const customers = [
@@ -18,15 +25,15 @@ const customers = [
   { name: 'Daniel' },
 ];
 
-const Reminders: FunctionComponent<RemindersProps> = ({ types = []}) => {
+const Reminders: FunctionComponent<RemindersProps> = ({reminders = []}) => {
   return (
     <div className='Reminders-container'>
       <div>
-        {types.map((r, index) => (
-          <div key={index}>{r.name}</div>
+        {reminders.map((r, index) => (
+          <ReminderPreview key={index} reminder={r} />
         ))}
       </div>
-      <ReminderForm types={types} customers={customers} />
+      <ReminderForm types={reminders} customers={customers} />
     </div>
   );
 };

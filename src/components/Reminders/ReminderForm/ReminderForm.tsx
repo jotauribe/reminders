@@ -1,10 +1,12 @@
 import React, { FunctionComponent, useState } from "react";
 
-import { Type } from '../Reminders';
 import InputForm from '../../Common/InputForm';
 import SelectForm from '../../Common/SelectForm';
 import "./index.scss";
 
+interface Type {
+  name: string;
+}
 interface ReminderForm {
   customers: Object;
   types: Object;

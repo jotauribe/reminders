@@ -32,11 +32,13 @@ const ReminderForm: FunctionComponent<ReminderFormProps> = ({ customers = [], ty
   }
 
   return (
-    <div>
-      <div className='ReminderForm-title'>Reminder Form</div>
-      <SelectForm onChange={setCustomer} label={'Customer'} items={customers} keyForm={1}/>
-      <SelectForm onChange={setType} label={'Types'} items={types} keyForm={2}/>
-      <InputForm value={date} onChange={setDate} label={'Date'} type={'date'}/>
+    <div className='ReminderForm-container'>
+      <label className='ReminderForm-title'>Reminder Form</label>
+      <div className='ReminferForm-content'>
+        <SelectForm onChange={setCustomer} label={'Customer'} items={customers} keyForm={1}/>
+        <SelectForm onChange={setType} label={'Types'} items={types} keyForm={2}/>
+        <InputForm value={date} onChange={setDate} label={'Date'} type={'date'}/>
+      </div>
       <button className='ReminderForm-button' onClick={saveReminder}>Save</button>
     </div>
   );

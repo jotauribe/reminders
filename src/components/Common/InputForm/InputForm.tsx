@@ -11,11 +11,11 @@ type InputForm = {
 
 const InputForm: FunctionComponent<InputForm> = ({ value, onChange, label, type }) => {
   return (
-    <div className='ReminderForm-section-form'>
-      <label className='ReminderForm-label'>
+    <div className='InputForm-container'>
+      <label className='InputForm-label'>
         {label}:
       </label>
-      <input value={value} onChange={e => onChange(e.target.value)} type={type} className='ReminderForm-input date' />
+      <input value={value} onChange={e => onChange(e.target.value)} type={type} className='InputForm-input' />
     </div>
   );
 };

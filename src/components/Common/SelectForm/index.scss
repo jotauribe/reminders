@@ -1,19 +1,28 @@
-.ReminderForm-section-form {
-  display: flex;
-  justify-content: space-between;
-  padding: 6px;
-}
+@import '../../../scss/variables';
 
-.ReminderForm-label {
-  margin-right: 8px;
-}
+.SelectForm-container {
+  display: grid;
+  grid-template-columns: 10rem auto;
+  grid-row-gap: 1rem;
+  grid-column-gap: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+  
+  .SelectForm-label {
+    font-size: 2rem;
+  }
+  
+  .SelectForm-select {
+    font-size: 1rem;
+    font-family: $font-family-manjari;
+    margin-left: 1rem;
+    height: 2rem;
+    background-color: $white;
+    border: 0.5px solid $light-grey;
+    border-radius: 5px;
 
-.ReminderForm-input {
-  border: 1px solid gray;
-  height: 18px;
-  width: 200px;
-}
-
-.select {
-  height: 22px;
+    &:focus {
+      border: 3px solid $soft-blue;
+    }
+  }
 }

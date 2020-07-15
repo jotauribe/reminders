@@ -15,11 +15,11 @@ type SelectForm = {
 
 const SelectForm: FunctionComponent<SelectForm> = ({onChange, label= '', items = [], keyForm}) => {
   return (
-    <div className='ReminderForm-section-form'>
-      <label className='ReminderForm-label'>
+    <div className='SelectForm-container'>
+      <label className='SelectForm-label'>
         {label}:
       </label>
-      <select name='type' id='type' className='ReminderForm-input select' onChange={e => onChange(e.target.value)} key={keyForm}>
+      <select name='type' id='type' className='SelectForm-select' onChange={e => onChange(e.target.value)} key={keyForm}>
         {items.map((item, index) => (
           <option value={item.name} key={index}>{item.name}</option>
         ))}

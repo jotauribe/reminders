@@ -12,10 +12,10 @@ const app = function appBuilder({ router, port, baseUrl }) {
   server.use(bodyParser.urlencoded({ extended: true }));
 
   //Connecting to MongoDB database
-  const { MONGO_USER, MONGO_PWD, MONGO_DB } = process.env;
+  const { MONGO_USER, MONGO_PWD } = process.env;
 
   mongoose.connect(
-    `mongodb://${MONGO_USER}:${MONGO_PWD}@database:27017/almundo`,
+    `mongodb://${MONGO_USER}:${MONGO_PWD}@ds129402.mlab.com:29402/reminders`,
     {
       useNewUrlParser: true,
     }

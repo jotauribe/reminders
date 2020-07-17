@@ -12,12 +12,8 @@ interface ReminderForm {
   types: Object;
 }
 
-interface Customer {
-  name: string;
-}
-
 type ReminderFormProps = {
-  customers: Customer[];
+  customers: Type[];
   types: Type[];
 };
 

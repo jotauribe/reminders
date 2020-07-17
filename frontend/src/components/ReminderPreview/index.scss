@@ -1,0 +1,12 @@
+@import '../../scss/variables';
+
+.Card-container {
+  display: flex;
+  flex-direction: column;
+  font-family: $font-family-poppins;
+  background-color: $light-green;
+  padding: 20px;
+  border: 3px solid $dark-blue;
+  border-radius: 5%;
+  margin: 10px;
+}

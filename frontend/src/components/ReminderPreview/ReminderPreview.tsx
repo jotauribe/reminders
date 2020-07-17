@@ -1,13 +1,17 @@
 import React, { FunctionComponent } from 'react';
 
+import "./index.scss";
+
 interface Customer {
-  name: string
+  id: String,
+  name: String
 }
 
 interface Reminder {
-  name: string;
-  date?: Date;
-  customer: Customer;
+  id: String,
+  type: String,
+  dueDate: String,
+  customer: Customer
 }
 
 type RemindersProps = {
@@ -15,7 +19,15 @@ type RemindersProps = {
 };
 
 const Reminder: FunctionComponent<RemindersProps> = ({ reminder = {} }) => {
-  return <div>{reminder.name}</div>;
+  return (
+    <div className='Card-container'>
+      <label><strong>Type:</strong> {reminder.type}</label>
+      <label><strong>Due Date:</strong> {reminder.dueDate}</label>
+      {reminder.customer && 
+        <label><strong>Customer:</strong> {reminder.customer.name}</label>
+      }
+    </div>
+  );
 };
 
 export default Reminder;

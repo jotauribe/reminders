@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 
-import InputForm from '../../Common/InputForm';
-import SelectForm from '../../Common/SelectForm';
+import InputForm from '../Common/InputForm';
+import SelectForm from '../Common/SelectForm';
 import "./index.scss";
 
 interface Type {
